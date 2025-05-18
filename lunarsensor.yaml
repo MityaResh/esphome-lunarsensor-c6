@@ -42,6 +42,11 @@ sensor:
     name: "Ambient Light"
     id: ambient_light
     update_interval: 1s
+    filters:
+      - sliding_window_moving_average:
+          window_size: 8
+          send_every: 2
+          send_first_at: 2
 
 status_led:
   pin: GPIO7
